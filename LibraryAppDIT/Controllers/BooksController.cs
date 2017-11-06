@@ -21,17 +21,9 @@ namespace LibraryAppDIT.Controllers
 
             var book = new Book() { Name = "Book 1" };
 
-            var customers = new List <Customer>
-            {
-                new Customer {Name = "Customer 1"},
-                new Customer {Name = "Customer 2"}
-            };
-
             var viewModel = new LibraryBookViewModel
             {
-                Book = book,
-                Customers = customers
-
+                Book = book
             };
 
             return View(viewModel);
