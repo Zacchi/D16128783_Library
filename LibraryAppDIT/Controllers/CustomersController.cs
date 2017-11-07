@@ -31,14 +31,14 @@ namespace LibraryAppDIT.Controllers
             return View(customers);
         }
         
-        public ActionResult Details(int id)
+        public ActionResult CxDetails(int id)
         {
-            var customerDetails = _dbcontext.Customers.SingleOrDefault(c => c.Id == id);
+            var cxDetails = _dbcontext.Customers.SingleOrDefault(c => c.Id == id);
 
-            if (customerDetails == null)
+            if (cxDetails == null)
                 return HttpNotFound();
 
-            return View(customerDetails);
+            return View(cxDetails);
         }
 
 

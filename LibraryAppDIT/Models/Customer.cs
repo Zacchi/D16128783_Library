@@ -14,6 +14,7 @@ namespace LibraryAppDIT.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
+        [DataType(DataType.Date)]
         public DateTime DOB { get; set; }
         public int PhoneNumber { get; set; }
     }
