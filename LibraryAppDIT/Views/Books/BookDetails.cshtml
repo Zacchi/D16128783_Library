@@ -1,0 +1,14 @@
+﻿@model LibraryAppDIT.Models.Book
+@{
+    ViewBag.Title = "@Model.Title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+<ul>
+    <li>Title: @Model.Title </li>
+    <li>Genre: @Model.Genre </li>
+    <li>Author: @Model.Author </li>
+    <li>Published Year: @Model.publishedYear
+</ul>

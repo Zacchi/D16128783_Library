@@ -41,9 +41,6 @@ namespace LibraryAppDIT.Controllers
             return View(cxDetails);
         }
 
-
-
-
         // GET: Customers
         //public ActionResult LibraryCustomer()
         //{

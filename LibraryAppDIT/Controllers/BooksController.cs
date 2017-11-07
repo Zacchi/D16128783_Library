@@ -11,22 +11,48 @@ namespace LibraryAppDIT.Controllers
     public class BooksController : Controller
     {
         // GET: Books
-        public ActionResult Library()
+                private ApplicationDbContext _dbcontext;
+
+        public BooksController()
         {
-            //var book = new List <Book>
-            //{
-            //      new Book = {Name = "Kite Runner"}, 
-            //      new Book = {Name = "Book 2"} 
-            //};
-
-            var book = new Book() { Name = "Book 1" };
-
-            var viewModel = new LibraryBookViewModel
-            {
-                Book = book
-            };
-
-            return View(viewModel);
+            _dbcontext = new ApplicationDbContext();
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            _dbcontext.Dispose();
+        }
+
+        // GET: Customers
+        public ViewResult Library()
+        {
+
+            var customers = _dbcontext.Book.ToList();
+
+            return View(customers);
+        }
+        
+        public ActionResult BookDetails(int id)
+        {
+            var BookDetails = _dbcontext.Book.SingleOrDefault(c => c.ISBN == id);
+
+            if (BookDetails == null)
+                return HttpNotFound();
+
+            return View(BookDetails);
+        }
+
+
+        //public ActionResult Library()
+        //{
+        //    var book = new Book() { Title = "Book 1" };
+
+        //    var viewModel = new LibraryBookViewModel
+        //    {
+        //        Book = book
+        //    };
+
+        //    return View(viewModel);
+        //}
     }
 }

@@ -8,7 +8,7 @@ namespace LibraryAppDIT.ViewModels
 {
     public class LibraryBookViewModel
     {
-        public Book Book { get; set; }
+        public List<Book> Book { get; set; }
         public List<Customer> Customers { get; set; }
 
     }

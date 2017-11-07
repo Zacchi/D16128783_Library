@@ -1,8 +1,27 @@
-﻿@model LibraryAppDIT.ViewModels.LibraryBookViewModel
+﻿@*@model LibraryAppDIT.ViewModels.LibraryBookViewModel*@
+@model IEnumerable<LibraryAppDIT.Models.Book>
 @{
     ViewBag.Title = "Library";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Book.Name</h2>
+<h2>Library Books</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(book.Title, "BookDetails", "Books", new { id = book.ISBN}, null) </td>
+                <td>@book.Genre</td>
+            </tr>
+        }
+    </tbody>
+</table>
 
