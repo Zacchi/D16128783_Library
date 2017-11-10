@@ -14,8 +14,9 @@ namespace LibraryAppDIT.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        [DataType(DataType.Date)]
+        [Display(Name = "Birthday")]
         public DateTime DOB { get; set; }
+        [Display(Name = "Phone Number")]
         public int PhoneNumber { get; set; }
     }
 }

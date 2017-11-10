@@ -6,10 +6,8 @@ using LibraryAppDIT.Models;
 
 namespace LibraryAppDIT.ViewModels
 {
-    public class LibraryBookViewModel
+    public class NewCustomerVM
     {
-        public List<Book> Book { get; set; }
-        public Customer Customers { get; set; }
-
+        public Customer Customer { get; set; }
     }
 }

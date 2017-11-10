@@ -22,6 +22,19 @@ namespace LibraryAppDIT.Controllers
             _dbcontext.Dispose();
         }
 
+        public ActionResult NewCx()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Insert(Customer customer)
+        {
+            _dbcontext.Customers.Add(customer);
+            _dbcontext.SaveChanges(); 
+            return RedirectToAction("LibraryCustomer", "Customers");
+        }
+
         // GET: Customers
         public ViewResult LibraryCustomer()
         {
