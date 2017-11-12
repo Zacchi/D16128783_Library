@@ -12,8 +12,10 @@ namespace LibraryAppDIT.Models
         [Required]
         [StringLength (255)]
         public string Name { get; set; }
+        [Required]
         public string Email { get; set; }
         public string Address { get; set; }
+        [Required]
         [Display(Name = "Birthday")]
         public DateTime DOB { get; set; }
         [Display(Name = "Phone Number")]

@@ -30,6 +30,17 @@ namespace LibraryAppDIT.Controllers
         [HttpPost]
         public ActionResult Insert(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewCustomerVM
+                {
+                    Customer = customer
+                };
+
+                return View("NewCx", viewModel);
+                
+            }
+
             _dbcontext.Customers.Add(customer);
             _dbcontext.SaveChanges(); 
             return RedirectToAction("LibraryCustomer", "Customers");
