@@ -49,10 +49,10 @@ namespace LibraryAppDIT.Controllers
         // GET: Customers
         public ViewResult LibraryCustomer()
         {
+            return View();
+            //var customers = _dbcontext.Customers.ToList();
 
-            var customers = _dbcontext.Customers.ToList();
-
-            return View(customers);
+            //return View(customers);
         }
         
         public ActionResult CxDetails(int id)
