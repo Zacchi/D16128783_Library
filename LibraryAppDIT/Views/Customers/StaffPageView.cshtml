@@ -1,0 +1,56 @@
+﻿@model IEnumerable<LibraryAppDIT.Models.Customer>
+@{
+    ViewBag.Title = "LibraryCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section scripts
+{
+    <script>
+        $(document).ready(function ()
+        {
+            var table = $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "Name"
+
+                    },
+                    {
+                        data: "Address"
+                    },
+                      
+                ]
+            });
+            });
+    </script>    
+}
+
+<h2>Customers</h2>
+    
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @*@foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(customer.Name, "CxDetails", "Customers", new { id = customer.Id }, null) </td>
+                <td>@customer.Address</td>
+                <td>
+                    <button data-customer-id="@customer.Id" class="btn-link js-delete">Delete</button>
+                </td>
+            </tr>
+        }*@
+    </tbody>
+</table>
+
+

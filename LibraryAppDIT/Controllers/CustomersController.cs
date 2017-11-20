@@ -22,6 +22,7 @@ namespace LibraryAppDIT.Controllers
             _dbcontext.Dispose();
         }
 
+        [Authorize (Roles = "StoreManager")]
         public ActionResult NewCx()
         {
             return View();
@@ -47,14 +48,16 @@ namespace LibraryAppDIT.Controllers
         }
 
         // GET: Customers
+        [Authorize]
         public ViewResult LibraryCustomer()
         {
-            return View();
-            //var customers = _dbcontext.Customers.ToList();
-
-            //return View(customers);
+            if (User.IsInRole("StoreManager"))
+                return View("LibraryCustomer");
+            else
+                return View("StaffPageView");
         }
-        
+
+        [Authorize]
         public ActionResult CxDetails(int id)
         {
             var cxDetails = _dbcontext.Customers.SingleOrDefault(c => c.Id == id);
@@ -64,23 +67,5 @@ namespace LibraryAppDIT.Controllers
 
             return View(cxDetails);
         }
-
-        // GET: Customers
-        //public ActionResult LibraryCustomer()
-        //{
-        //    var customers = new List<Customer>
-        //    {
-        //        new Customer {Name = "Customer 1"},
-        //        new Customer {Name = "Customer 2"}
-        //    };
-
-        //    var viewModel = new LibraryBookViewModel
-        //    {
-        //        Customers = customers
-
-        //    };
-
-        //    return View(viewModel);
-        //}
     }
 }
