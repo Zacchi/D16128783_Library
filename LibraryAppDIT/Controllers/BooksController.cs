@@ -27,14 +27,14 @@ namespace LibraryAppDIT.Controllers
         public ViewResult Library()
         {
 
-            var customers = _dbcontext.Book.ToList();
+            var customers = _dbcontext.Books.ToList();
 
             return View(customers);
         }
         
         public ActionResult BookDetails(int id)
         {
-            var BookDetails = _dbcontext.Book.SingleOrDefault(c => c.ISBN == id);
+            var BookDetails = _dbcontext.Books.SingleOrDefault(c => c.ISBN == id);
 
             if (BookDetails == null)
                 return HttpNotFound();

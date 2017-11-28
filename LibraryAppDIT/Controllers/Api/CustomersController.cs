@@ -71,13 +71,13 @@ namespace LibraryAppDIT.Controllers.WebApi
         public void DeleteCustomer(int id)
         {
             var customerInDb = _dbcontext.Customers.SingleOrDefault(cx => cx.Id == id);
-
+            
             if (customerInDb == null)
-            throw new HttpResponseException(HttpStatusCode.NotFound);
-
-        else
-            _dbcontext.Customers.Remove(customerInDb);
-            _dbcontext.SaveChanges();
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            
+            else
+                _dbcontext.Customers.Remove(customerInDb);
+                _dbcontext.SaveChanges();
         }
     }
 }

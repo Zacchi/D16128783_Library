@@ -74,8 +74,6 @@ namespace LibraryAppDIT.Controllers
             };
             return View(model);
         }
-
-        //
         // POST: /Manage/RemoveLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -105,8 +103,6 @@ namespace LibraryAppDIT.Controllers
         {
             return View();
         }
-
-        //
         // POST: /Manage/AddPhoneNumber
         [HttpPost]
         [ValidateAntiForgeryToken]

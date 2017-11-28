@@ -5,23 +5,68 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Library Books</h2>
-<table class="table table-bordered table-hover">
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $("#books").DataTable({
+                ajax: {
+                    url: "/api/books",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "Title",
+                        render: function (data, type, book) {
+                            return "<a href='BookDetails/" + book.ISBN + "'>" + book.Title + "</a>";
+                        }
+                    },
+                    {
+                        data: "Genre"
+                    },
+                    {
+                        data: "ISBN",
+                        render: function (data) {
+                            return "<button class='btn-link js-delete' data-book-isbn=" + data + ">Delete</button>";
+                        }
+                    }
+                ]
+            });
+
+            $("#books").on("click", ".js-delete", function () {
+
+                var deleteBtn = $(this);
+                //bootbox.confirm("Are you sure you want to delete the customer", function (hasAnswer) {
+                //if (hasAnswer) {
+
+                if (confirm("Are you sure you want to delete this book?")) {
+                    $.ajax({
+                        url: "/api/books/" + deleteBtn.attr("data-book-isbn"),
+                        method: "DELETE",
+                        success: function () {
+                            //console.log("Success")
+                            table.row(deleteBtn.parents("tr")).remove().draw();
+                        }
+                    });
+                }
+            });
+        });
+        // });
+
+    </script>
+}
+<h2>Books</h2>
+
+<table id="books" class="table table-bordered table-hover">
     <thead>
         <tr>
             <th>Title</th>
             <th>Genre</th>
+            <th>Delete</th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach (var book in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(book.Title, "BookDetails", "Books", new { id = book.ISBN}, null) </td>
-                <td>@book.Genre</td>
-            </tr>
-        }
+
     </tbody>
 </table>
-
