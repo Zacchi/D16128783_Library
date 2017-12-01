@@ -467,8 +467,11 @@
     <Content Include="Views\Customers\LibraryCustomer.cshtml" />
     <Content Include="Views\Customers\CxDetails.cshtml" />
     <Content Include="Views\Books\BookDetails.cshtml" />
-    <Content Include="Views\Customers\NewCx.cshtml" />
+    <Content Include="Views\Customers\MemberForm.cshtml" />
     <Content Include="Views\Customers\StaffPageView.cshtml" />
+    <Content Include="Views\Books\EditBook.cshtml" />
+    <Content Include="Views\Books\NewBookTest.cshtml" />
+    <Content Include="Views\Books\NewBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

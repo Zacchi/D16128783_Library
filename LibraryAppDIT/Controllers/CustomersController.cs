@@ -18,34 +18,49 @@ namespace LibraryAppDIT.Controllers
         }
 
         protected override void Dispose(bool disposing)
-        {
+        {//WHAT IS THIS FOR?
             _dbcontext.Dispose();
         }
 
         [Authorize (Roles = "StoreManager")]
-        public ActionResult NewCx()
+        public ActionResult MemberForm()
         {
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Insert(Customer customer)
+        //[HttpPost]
+        public ActionResult PostSave(Customer customer)
         {
-            if (!ModelState.IsValid)
-            {
-                var viewModel = new NewCustomerVM
-                {
-                    Customer = customer
-                };
+            //if (!ModelState.IsValid)
+            //{
+            //    var viewModel = new NewCustomerVM
+            //    {
+            //        Customer = customer
+            //    };
 
-                return View("NewCx", viewModel);
+            //    return View("MemberForm", viewModel);
                 
+            //}
+
+            if (customer.Id == 0)
+            {
+                _dbcontext.Customers.Add(customer); 
+            }
+            else
+            {
+                var customerInDB = _dbcontext.Customers.Single(c => c.Id == customer.Id);
+
+                customerInDB.Name = customer.Name;
+                customerInDB.DOB = customer.DOB;
+                customerInDB.Address = customer.Address;
+                customerInDB.Email = customer.Email;
+                customerInDB.PhoneNumber = customer.PhoneNumber;
             }
 
-            _dbcontext.Customers.Add(customer);
             _dbcontext.SaveChanges(); 
+
             return RedirectToAction("LibraryCustomer", "Customers");
-        }
+        }        
 
         // GET: Customers
         [Authorize]
@@ -62,10 +77,22 @@ namespace LibraryAppDIT.Controllers
         {
             var cxDetails = _dbcontext.Customers.SingleOrDefault(c => c.Id == id);
 
-            if (cxDetails == null)
-                return HttpNotFound();
+            //if (cxDetails == null)
+            //    return HttpNotFound();
 
             return View(cxDetails);
+        }
+
+        //Edit
+        public ActionResult Update(int id)
+        {
+            var customerInDB = _dbcontext.Customers.SingleOrDefault(c => c.Id == id);
+            
+            var viewCxModel = new NewCustomerVM
+            {
+                Customer = customerInDB
+            };
+                return View("MemberForm", viewCxModel);
         }
     }
 }

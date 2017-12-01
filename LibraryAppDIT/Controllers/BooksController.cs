@@ -42,6 +42,10 @@ namespace LibraryAppDIT.Controllers
             return View(BookDetails);
         }
 
+        public ActionResult NewBook()
+        {
+            return View();
+        }
 
         //public ActionResult Library()
         //{
