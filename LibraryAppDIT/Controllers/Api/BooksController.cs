@@ -20,6 +20,7 @@ namespace LibraryAppDIT.Controllers.Api
 
         public IEnumerable<Book> GetBooks()
         {
+
             return _dbcontext.Books.ToList();
         }
 

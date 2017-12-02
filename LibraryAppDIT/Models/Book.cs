@@ -17,6 +17,7 @@ namespace LibraryAppDIT.Models
         [Display(Name = "Published Year")]
         public string publishedYear {get; set;}
         public GenreType GenreType { get; set; }
+        [Display(Name = "Genre Type")]
         public int GenreTypeId { get; set; }
 
     }

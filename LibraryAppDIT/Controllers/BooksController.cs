@@ -27,7 +27,6 @@ namespace LibraryAppDIT.Controllers
         [Authorize(Roles = "StoreManager")]
         public ViewResult Library()
         {
-
             var books = _dbcontext.Books.ToList();
 
             return View(books);
