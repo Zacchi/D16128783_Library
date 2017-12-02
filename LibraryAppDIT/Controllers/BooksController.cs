@@ -46,7 +46,13 @@ namespace LibraryAppDIT.Controllers
 
         public ActionResult BookForm()
         {
-            return View();
+            var genreTypes = _dbcontext.GenreTypes.ToList();
+            var libraryViewModel = new LibraryViewModel
+            {
+                GenreTypes = genreTypes
+            };
+
+            return View(libraryViewModel);
         }
 
         public ActionResult PostSave(Book book)
@@ -74,7 +80,7 @@ namespace LibraryAppDIT.Controllers
         {
             var bookInDB = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
 
-            var viewBookModel = new LibraryBookViewModel
+            var viewBookModel = new LibraryViewModel
             {
                 Book = bookInDB
             };

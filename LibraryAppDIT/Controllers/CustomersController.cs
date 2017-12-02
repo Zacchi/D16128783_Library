@@ -88,7 +88,7 @@ namespace LibraryAppDIT.Controllers
         {
             var customerInDB = _dbcontext.Customers.SingleOrDefault(c => c.Id == id);
             
-            var viewCxModel = new NewCustomerVM
+            var viewCxModel = new LibraryViewModel
             {
                 Customer = customerInDB
             };
