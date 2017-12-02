@@ -1,16 +1,18 @@
-﻿@model LibraryAppDIT.Models.Book
+﻿@model LibraryAppDIT.ViewModels.LibraryBookViewModel
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "BookForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>View</h2>
+<h2>Books</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
+    @Html.HiddenFor(model => model.Book.Id)
+
     <div class="form-horizontal">
         <h4>Book</h4>
         <hr />

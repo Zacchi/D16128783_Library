@@ -14,6 +14,7 @@ namespace LibraryAppDIT.Models
         public string Title { get; set; }
         public string Genre { get; set; }
         public string Author { get; set; }
+        [Display(Name = "Published Year")]
         public string publishedYear {get; set;}
     }
 }

@@ -11,7 +11,7 @@ namespace LibraryAppDIT.Controllers
     public class BooksController : Controller
     {
         // GET: Books
-                private ApplicationDbContext _dbcontext;
+        private ApplicationDbContext _dbcontext;
 
         public BooksController()
         {
@@ -24,17 +24,19 @@ namespace LibraryAppDIT.Controllers
         }
 
         // GET: Customers
+        [Authorize(Roles = "StoreManager")]
         public ViewResult Library()
         {
 
-            var customers = _dbcontext.Books.ToList();
+            var books = _dbcontext.Books.ToList();
 
-            return View(customers);
+            return View(books);
         }
-        
+
+        [Authorize]
         public ActionResult BookDetails(int id)
         {
-            var BookDetails = _dbcontext.Books.SingleOrDefault(c => c.ISBN == id);
+            var BookDetails = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
 
             if (BookDetails == null)
                 return HttpNotFound();
@@ -42,21 +44,41 @@ namespace LibraryAppDIT.Controllers
             return View(BookDetails);
         }
 
-        public ActionResult NewBook()
+        public ActionResult BookForm()
         {
             return View();
         }
 
-        //public ActionResult Library()
-        //{
-        //    var book = new Book() { Title = "Book 1" };
+        public ActionResult PostSave(Book book)
+        {
+            if (book.ISBN == 0)
+            {
+                _dbcontext.Books.Add(book);
+            }
+            else
+            {
+                var bookInDB = _dbcontext.Books.Single(b => b.ISBN == book.ISBN);
 
-        //    var viewModel = new LibraryBookViewModel
-        //    {
-        //        Book = book
-        //    };
+                bookInDB.Title = book.Title;
+                bookInDB.Genre = book.Genre;
+                bookInDB.Author = book.Author;
+                bookInDB.publishedYear = book.publishedYear;
 
-        //    return View(viewModel);
-        //}
+            }
+            _dbcontext.SaveChanges();
+
+            return RedirectToAction("Library", "Books");
+        }
+
+        public ActionResult Update(int id)
+        {
+            var bookInDB = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
+
+            var viewBookModel = new LibraryBookViewModel
+            {
+                Book = bookInDB
+            };
+            return View("BookForm", viewBookModel);
+        }
     }
 }

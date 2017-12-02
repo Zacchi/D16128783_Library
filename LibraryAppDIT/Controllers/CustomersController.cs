@@ -28,7 +28,7 @@ namespace LibraryAppDIT.Controllers
             return View();
         }
 
-        //[HttpPost]
+        //Post
         public ActionResult PostSave(Customer customer)
         {
             //if (!ModelState.IsValid)

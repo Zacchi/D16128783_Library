@@ -6,8 +6,15 @@
 
 <h2>@Model.Name</h2>  
 
-<p><button class="btn btn-primary"> Edit </button></p>
+<br />
+<p>
+    @Html.ActionLink("Edit Member", "Update", "Customers", new {id = Model.Id}, new { @class = "btn btn-primary" })
+</p>
 
+_______________________________________________________________________________________________________________
+
+<br />
+<br />
 <ul>
 
     <li>Address: @Model.Address </li>

@@ -6,6 +6,14 @@
 
 <h2>@Model.Title</h2>
 
+
+<br />
+<p>
+    @Html.ActionLink("Edit Book", "Update", "Books", new { id = Model.ISBN }, new { @class = "btn btn-primary" })
+</p>
+
+<br />
+<br />
 <ul>
     <li>Title: @Model.Title </li>
     <li>Genre: @Model.Genre </li>

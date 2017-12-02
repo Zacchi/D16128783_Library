@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.SqlClient;
 using LibraryAppDIT.Models;
 
 namespace LibraryAppDIT.Controllers.Api
@@ -22,15 +23,20 @@ namespace LibraryAppDIT.Controllers.Api
             return _dbcontext.Books.ToList();
         }
 
-        public Book GetBooks(int id)
+        public Book GetBook(int id)
         {
             var book = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
+            //var book = _dbcontext.Books.GroupBy(x => x.Genre).Select(z => new
+            //{
+            //    Genre = z.Key,
+            //    Count = z.Count()
+            //});
 
             if (book == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
             return book;
-        }
+        }      
 
         [HttpPost]
         public Book InsertBook(Book book)
@@ -43,7 +49,6 @@ namespace LibraryAppDIT.Controllers.Api
 
             return book;
         }
-
 
         [HttpPut]
         public void UpdateBook(int id, Book book)
@@ -68,7 +73,6 @@ namespace LibraryAppDIT.Controllers.Api
             }
         }
 
-
          [HttpDelete]
         public void DeleteBook (int id)
         {
@@ -81,5 +85,6 @@ namespace LibraryAppDIT.Controllers.Api
                 _dbcontext.Books.Remove(bookInDb);
                 _dbcontext.SaveChanges();
         }
+
     }
 }
