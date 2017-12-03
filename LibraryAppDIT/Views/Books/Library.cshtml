@@ -1,5 +1,4 @@
-﻿@*@model LibraryAppDIT.ViewModels.LibraryBookViewModel*@
-@model IEnumerable<LibraryAppDIT.Models.Book>
+﻿@model IEnumerable<LibraryAppDIT.Models.Book>
 @{
     ViewBag.Title = "Library";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -22,7 +21,7 @@
                         }
                     },
                     {
-                        data: "Genre"
+                        data: "GenreType.Name"
                     },
                     {
                         data: "ISBN",

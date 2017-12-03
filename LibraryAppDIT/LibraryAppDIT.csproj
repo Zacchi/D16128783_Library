@@ -221,13 +221,13 @@
     <Compile Include="Migrations\201711202002424_createUsers.Designer.cs">
       <DependentUpon>201711202002424_createUsers.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712022106501_AddGenreType.cs" />
-    <Compile Include="Migrations\201712022106501_AddGenreType.Designer.cs">
-      <DependentUpon>201712022106501_AddGenreType.cs</DependentUpon>
+    <Compile Include="Migrations\201712030940165_AddGenreType.cs" />
+    <Compile Include="Migrations\201712030940165_AddGenreType.Designer.cs">
+      <DependentUpon>201712030940165_AddGenreType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712022115138_PopulateGenreType.cs" />
-    <Compile Include="Migrations\201712022115138_PopulateGenreType.Designer.cs">
-      <DependentUpon>201712022115138_PopulateGenreType.cs</DependentUpon>
+    <Compile Include="Migrations\201712030945079_PopulateGenreType.cs" />
+    <Compile Include="Migrations\201712030945079_PopulateGenreType.Designer.cs">
+      <DependentUpon>201712030945079_PopulateGenreType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -238,6 +238,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\BookFormViewModel.cs" />
     <Compile Include="ViewModels\LibraryViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -525,11 +526,11 @@
     <EmbeddedResource Include="Migrations\201711202002424_createUsers.resx">
       <DependentUpon>201711202002424_createUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712022106501_AddGenreType.resx">
-      <DependentUpon>201712022106501_AddGenreType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712030940165_AddGenreType.resx">
+      <DependentUpon>201712030940165_AddGenreType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712022115138_PopulateGenreType.resx">
-      <DependentUpon>201712022115138_PopulateGenreType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712030945079_PopulateGenreType.resx">
+      <DependentUpon>201712030945079_PopulateGenreType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

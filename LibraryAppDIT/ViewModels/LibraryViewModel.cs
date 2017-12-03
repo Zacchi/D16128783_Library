@@ -10,6 +10,7 @@ namespace LibraryAppDIT.ViewModels
     {
         public Book Book { get; set; }
         public Customer Customer { get; set; }
-        public IEnumerable<GenreType> GenreTypes { get; set; }
+        //public IEnumerable<GenreType> GenreTypes { get; set; }
+
     }
 }

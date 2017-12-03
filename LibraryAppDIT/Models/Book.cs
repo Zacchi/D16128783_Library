@@ -11,13 +11,17 @@ namespace LibraryAppDIT.Models
     {
         [Key]
         public int ISBN { get; set; }
+
         public string Title { get; set; }
-        public string Genre { get; set; }
-        public string Author { get; set; }
-        [Display(Name = "Published Year")]
-        public string publishedYear {get; set;}
+
+        //public string Genre { get; set; }
         public GenreType GenreType { get; set; }
+        
         public int GenreTypeId { get; set; }
 
+        public string Author { get; set; }
+
+        [Display(Name = "Published Year")]
+        public string publishedYear {get; set;}
     }
 }

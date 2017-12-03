@@ -3,7 +3,7 @@ namespace LibraryAppDIT.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class PopulateGenreType : DbMigration
+    public partial class AddGenreType : DbMigration
     {
         public override void Up()
         {
@@ -19,10 +19,12 @@ namespace LibraryAppDIT.Migrations
             AddColumn("dbo.Books", "GenreTypeId", c => c.Int(nullable: false));
             CreateIndex("dbo.Books", "GenreTypeId");
             AddForeignKey("dbo.Books", "GenreTypeId", "dbo.GenreTypes", "Id", cascadeDelete: true);
+            DropColumn("dbo.Books", "Genre");
         }
         
         public override void Down()
         {
+            AddColumn("dbo.Books", "Genre", c => c.String());
             DropForeignKey("dbo.Books", "GenreTypeId", "dbo.GenreTypes");
             DropIndex("dbo.Books", new[] { "GenreTypeId" });
             DropColumn("dbo.Books", "GenreTypeId");

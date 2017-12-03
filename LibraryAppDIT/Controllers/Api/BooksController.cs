@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -20,7 +21,15 @@ namespace LibraryAppDIT.Controllers.Api
 
         public IEnumerable<Book> GetBooks()
         {
-            return _dbcontext.Books.ToList();
+
+            var booksSQL = _dbcontext.Books
+                .Include(m => m.GenreType)
+                .Where(m => m.ISBN > 0);
+
+            //return _dbcontext.Books.ToList();
+            return booksSQL
+                .ToList();
+
         }
 
         public Book GetBook(int id)
@@ -64,8 +73,8 @@ namespace LibraryAppDIT.Controllers.Api
             else
             {
                 bookInDb.Title = book.Title;
-                bookInDb.Genre = book.Genre;
-                bookInDb.Genre = book.Genre;
+                bookInDb.GenreType = book.GenreType;
+                bookInDb.GenreType = book.GenreType;
                 bookInDb.Author = book.Author;
                 bookInDb.publishedYear = book.publishedYear;
 

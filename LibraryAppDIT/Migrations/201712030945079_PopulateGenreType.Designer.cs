@@ -7,13 +7,13 @@ namespace LibraryAppDIT.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class AddGenreType : IMigrationMetadata
+    public sealed partial class PopulateGenreType : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddGenreType));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PopulateGenreType));
         
         string IMigrationMetadata.Id
         {
-            get { return "201712022106501_AddGenreType"; }
+            get { return "201712030945079_PopulateGenreType"; }
         }
         
         string IMigrationMetadata.Source
