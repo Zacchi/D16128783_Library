@@ -35,11 +35,6 @@ namespace LibraryAppDIT.Controllers.Api
         public Book GetBook(int id)
         {
             var book = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
-            //var book = _dbcontext.Books.GroupBy(x => x.Genre).Select(z => new
-            //{
-            //    Genre = z.Key,
-            //    Count = z.Count()
-            //});
 
             if (book == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);

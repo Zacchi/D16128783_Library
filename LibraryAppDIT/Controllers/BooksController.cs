@@ -58,15 +58,15 @@ namespace LibraryAppDIT.Controllers
 
         public ActionResult PostSave(Book book)
         {
-            if(!ModelState.IsValid)
-            {
-                var bookViewModel = new BookFormViewModel(book)
-                {
-                    GenreTypes = _dbcontext.GenreTypes.ToList()
-                };
+            //if(!ModelState.IsValid)
+            //{
+            //    var bookViewModel = new BookFormViewModel(book)
+            //    {
+            //        GenreTypes = _dbcontext.GenreTypes.ToList()
+            //    };
 
-                return View("BookForm", bookViewModel);
-            }
+            //    return View("BookForm", bookViewModel);
+            //}
 
             if (book.ISBN == 0)
             {
@@ -91,9 +91,9 @@ namespace LibraryAppDIT.Controllers
         {
             var bookInDB = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
 
-            var viewBookModel = new LibraryViewModel
+            var viewBookModel = new BookFormViewModel(bookInDB)
             {
-                Book = bookInDB
+                GenreTypes = _dbcontext.GenreTypes.ToList()
             };
             return View("BookForm", viewBookModel);
         }
