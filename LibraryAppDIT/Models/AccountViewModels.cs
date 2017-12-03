@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System;
+using System.Linq;
+using System.Web;
 
 namespace LibraryAppDIT.Models
 {
@@ -64,6 +67,15 @@ namespace LibraryAppDIT.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        public string Name { get; set; }
+
+        [Required]
+        public DateTime DOB { get; set; }
+
+        [Required]
+        public string Address { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

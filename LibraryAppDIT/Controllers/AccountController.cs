@@ -152,7 +152,14 @@ namespace LibraryAppDIT.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser 
+                { 
+                    UserName = model.Name, 
+                    Email = model.Email, 
+                    Name = model.Name,
+                    DOB = model.DOB,
+                    Address = model.Address
+                };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

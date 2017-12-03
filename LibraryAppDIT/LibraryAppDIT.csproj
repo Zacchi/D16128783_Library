@@ -229,6 +229,18 @@
     <Compile Include="Migrations\201712030945079_PopulateGenreType.Designer.cs">
       <DependentUpon>201712030945079_PopulateGenreType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712031432397_addNewFieldNameToRegisterUserPage.cs" />
+    <Compile Include="Migrations\201712031432397_addNewFieldNameToRegisterUserPage.Designer.cs">
+      <DependentUpon>201712031432397_addNewFieldNameToRegisterUserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031445037_addNewFieldsToRegisterUserPage.cs" />
+    <Compile Include="Migrations\201712031445037_addNewFieldsToRegisterUserPage.Designer.cs">
+      <DependentUpon>201712031445037_addNewFieldsToRegisterUserPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031449221_addNewFieldsToRegisterUserPage2.cs" />
+    <Compile Include="Migrations\201712031449221_addNewFieldsToRegisterUserPage2.Designer.cs">
+      <DependentUpon>201712031449221_addNewFieldsToRegisterUserPage2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -531,6 +543,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712030945079_PopulateGenreType.resx">
       <DependentUpon>201712030945079_PopulateGenreType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031432397_addNewFieldNameToRegisterUserPage.resx">
+      <DependentUpon>201712031432397_addNewFieldNameToRegisterUserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031445037_addNewFieldsToRegisterUserPage.resx">
+      <DependentUpon>201712031445037_addNewFieldsToRegisterUserPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031449221_addNewFieldsToRegisterUserPage2.resx">
+      <DependentUpon>201712031449221_addNewFieldsToRegisterUserPage2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
