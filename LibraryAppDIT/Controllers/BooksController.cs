@@ -62,15 +62,16 @@ namespace LibraryAppDIT.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult PostSave(Book book)
         {
-            //if(!ModelState.IsValid)
-            //{
-            //    var bookViewModel = new BookFormViewModel(book)
-            //    {
-            //        GenreTypes = _dbcontext.GenreTypes.ToList()
-            //    };
+            if (!ModelState.IsValid)
+            {
+                var bookViewModel = new BookFormViewModel(book)
+                {
+                    Book = book,
+                    GenreTypes = _dbcontext.GenreTypes.ToList()
+                };
 
-            //    return View("BookForm", bookViewModel);
-            //}
+                return View("BookForm", bookViewModel);
+            }
 
             if (book.ISBN == 0)
             {
@@ -91,7 +92,6 @@ namespace LibraryAppDIT.Controllers
             return RedirectToAction("Library", "Books");
         }
 
-        [HttpPut]
         public ActionResult Update(int id)
         {
             var bookInDB = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);

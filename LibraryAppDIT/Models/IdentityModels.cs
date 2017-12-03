@@ -42,8 +42,6 @@ namespace LibraryAppDIT.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Book> Books{ get; set; }
         public DbSet<GenreType> GenreTypes { get; set; }
         public DbSet<RegisterViewModel> RegisterViewModels { get; set; }

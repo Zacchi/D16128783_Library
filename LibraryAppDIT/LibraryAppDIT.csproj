@@ -254,10 +254,17 @@
     <Compile Include="Migrations\201712031915484_addNewFieldsToRegisterUserPage6.Designer.cs">
       <DependentUpon>201712031915484_addNewFieldsToRegisterUserPage6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712032205487_RemoveCustomerModel.cs" />
+    <Compile Include="Migrations\201712032205487_RemoveCustomerModel.Designer.cs">
+      <DependentUpon>201712032205487_RemoveCustomerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712032303025_updateBookModel.cs" />
+    <Compile Include="Migrations\201712032303025_updateBookModel.Designer.cs">
+      <DependentUpon>201712032303025_updateBookModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GenreType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -377,7 +384,6 @@
     <Content Include="Content\DataTables\images\sort_desc.png" />
     <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
     <Content Include="Content\DataTables\swf\flashExport.swf" />
-    <Content Include="Content\datepicker.css" />
     <Content Include="Content\Images\bookImage3.png" />
     <Content Include="Content\Images\bookimg1.png" />
     <Content Include="Content\Images\bookImg2.png" />
@@ -393,7 +399,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
-    <Content Include="Content\datepicker.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
@@ -507,12 +512,8 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Books\Library.cshtml" />
-    <Content Include="Views\Members\_Delete_LibraryMember.cshtml" />
-    <Content Include="Views\Members\_Delete_CxDetails.cshtml" />
     <Content Include="Views\Books\BookDetails.cshtml" />
-    <Content Include="Views\Members\_Delete_StaffPageView.cshtml" />
     <Content Include="Views\Books\BookForm.cshtml" />
-    <Content Include="Views\Books\PieChartTest.cshtml" />
     <Content Include="Views\Members\MembersList.cshtml" />
     <Content Include="Views\Books\ViewOnly.cshtml" />
   </ItemGroup>
@@ -577,6 +578,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712031915484_addNewFieldsToRegisterUserPage6.resx">
       <DependentUpon>201712031915484_addNewFieldsToRegisterUserPage6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712032205487_RemoveCustomerModel.resx">
+      <DependentUpon>201712032205487_RemoveCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712032303025_updateBookModel.resx">
+      <DependentUpon>201712032303025_updateBookModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
