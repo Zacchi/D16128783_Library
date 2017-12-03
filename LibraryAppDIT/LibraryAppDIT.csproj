@@ -179,10 +179,10 @@
     <Compile Include="Controllers\Api\BooksController.cs" />
     <Compile Include="Controllers\Api\UsersListController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\Api\CustomersController.cs" />
+    <Compile Include="Controllers\Api\OldCustomersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -496,15 +496,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Books\Library.cshtml" />
-    <Content Include="Views\Customers\LibraryCustomer.cshtml" />
-    <Content Include="Views\Customers\CxDetails.cshtml" />
+    <Content Include="Views\Members\_Delete_LibraryMember.cshtml" />
+    <Content Include="Views\Members\_Delete_CxDetails.cshtml" />
     <Content Include="Views\Books\BookDetails.cshtml" />
-    <Content Include="Views\Customers\MemberForm.cshtml" />
-    <Content Include="Views\Customers\StaffPageView.cshtml" />
-    <Content Include="Views\Books\EditBook.cshtml" />
+    <Content Include="Views\Members\_Delete_StaffPageView.cshtml" />
     <Content Include="Views\Books\BookForm.cshtml" />
     <Content Include="Views\Books\PieChartTest.cshtml" />
-    <Content Include="Views\Customers\MembersList.cshtml" />
+    <Content Include="Views\Members\MembersList.cshtml" />
+    <Content Include="Views\Books\ViewOnly.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

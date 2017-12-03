@@ -24,6 +24,12 @@
                         data: "GenreType.Name"
                     },
                     {
+                        data: "Author"
+                    },
+                    {
+                        data: "publishedYear"
+                    },
+                    {
                         data: "ISBN",
                         render: function (data) {
                             return "<button class='btn-link js-delete' data-book-isbn=" + data + ">Delete</button>";
@@ -66,7 +72,9 @@
 }
 <body onload="initializePieChartOfBookGenres();">
 
-    <h2>Books</h2>
+    <div align="center">
+        <h2>Books</h2>
+    </div>
     <br />
 
     @Html.ActionLink("New Book", "BookForm", "Books", null, new { @class = "btn btn-primary" })
@@ -79,10 +87,11 @@
             <tr>
                 <th>Title</th>
                 <th>Genre</th>
+                <th>Author</th>
+                <th>Published Year</th>
                 <th>Delete</th>
             </tr>
         </thead>
-
         <tbody>
 
         </tbody>

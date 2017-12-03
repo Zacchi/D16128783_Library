@@ -9,7 +9,7 @@
     <script>
             $(document).ready(function ()
             {
-                var table = $("#customers").DataTable({
+                var table = $("#members").DataTable({
                     ajax: {
                         url: "/api/userslist",
                         dataSrc: ""
@@ -33,19 +33,12 @@
 
     </script>
 }
-<h2>Members List</h2>
+<h2>Members</h2>
 
-<br />
-
-@*@Html.ActionLink("Add Member", "MemberForm", "Customers", null, new { @class = "btn btn-primary" })*@
-
-<br />
-<br />
-
-<table id="customers" class="table table-bordered table-hover">
+<table id="members" class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th>Customer</th>
+            <th>Member</th>
             <th>Address</th>
             <th>DOB</th>
             <th>Email</th>

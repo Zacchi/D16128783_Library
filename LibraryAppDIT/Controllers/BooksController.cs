@@ -25,15 +25,18 @@ namespace LibraryAppDIT.Controllers
             _dbcontext.Dispose();
         }
 
-        // GET: Customers
-        [Authorize(Roles = "StoreManager")]
         public ViewResult Library()
         {
             var books = _dbcontext.Books.Include(b => b.GenreType).ToList();
 
-            return View(books);
+            if (User.IsInRole("StoreManager"))
+                return View(books);
+            else
+                return View("ViewOnly", books);
+
         }
 
+         [Authorize(Roles = "StoreManager")]
         public ActionResult BookForm()
         {
             var genreTypes = _dbcontext.GenreTypes.ToList();
@@ -45,7 +48,7 @@ namespace LibraryAppDIT.Controllers
             return View(bookViewModel);
         }
 
-        [Authorize]
+        [Authorize(Roles = "StoreManager")]
         public ActionResult BookDetails(int id)
         {
             var BookDetails = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
@@ -88,6 +91,7 @@ namespace LibraryAppDIT.Controllers
             return RedirectToAction("Library", "Books");
         }
 
+        [HttpPut]
         public ActionResult Update(int id)
         {
             var bookInDB = _dbcontext.Books.SingleOrDefault(b => b.ISBN == id);
