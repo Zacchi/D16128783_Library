@@ -177,6 +177,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\BookPieController.cs" />
     <Compile Include="Controllers\Api\BooksController.cs" />
+    <Compile Include="Controllers\Api\UsersListController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -240,6 +241,10 @@
     <Compile Include="Migrations\201712031449221_addNewFieldsToRegisterUserPage2.cs" />
     <Compile Include="Migrations\201712031449221_addNewFieldsToRegisterUserPage2.Designer.cs">
       <DependentUpon>201712031449221_addNewFieldsToRegisterUserPage2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712031634360_addNewFieldsToRegisterUserPage3.cs" />
+    <Compile Include="Migrations\201712031634360_addNewFieldsToRegisterUserPage3.Designer.cs">
+      <DependentUpon>201712031634360_addNewFieldsToRegisterUserPage3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -499,6 +504,7 @@
     <Content Include="Views\Books\EditBook.cshtml" />
     <Content Include="Views\Books\BookForm.cshtml" />
     <Content Include="Views\Books\PieChartTest.cshtml" />
+    <Content Include="Views\Customers\MembersList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -552,6 +558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712031449221_addNewFieldsToRegisterUserPage2.resx">
       <DependentUpon>201712031449221_addNewFieldsToRegisterUserPage2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712031634360_addNewFieldsToRegisterUserPage3.resx">
+      <DependentUpon>201712031634360_addNewFieldsToRegisterUserPage3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -67,6 +67,9 @@ namespace LibraryAppDIT.Models
 
     public class RegisterViewModel
     {
+        [Key]
+        public string UserId { get; set; }
+
         [Required]
         public string Name { get; set; }
 

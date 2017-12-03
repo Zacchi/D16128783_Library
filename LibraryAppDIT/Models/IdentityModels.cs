@@ -42,6 +42,7 @@ namespace LibraryAppDIT.Models
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Book> Books{ get; set; }
         public DbSet<GenreType> GenreTypes { get; set; }
+        public DbSet<RegisterViewModel> RegisterViewModels { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -15,11 +15,18 @@ namespace LibraryAppDIT.Controllers
         public CustomersController()
         {
             _dbcontext = new ApplicationDbContext();
+
         }
 
         protected override void Dispose(bool disposing)
-        {//WHAT IS THIS FOR?
+        {
             _dbcontext.Dispose();
+        }
+
+        [Authorize(Roles = "StoreManager")]
+        public ActionResult MembersList()
+        {
+            return View();
         }
 
         [Authorize (Roles = "StoreManager")]
