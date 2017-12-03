@@ -80,6 +80,9 @@ namespace LibraryAppDIT.Models
         public string Address { get; set; }
 
         [Required]
+        public int Phone { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }

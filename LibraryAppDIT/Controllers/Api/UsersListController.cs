@@ -27,7 +27,8 @@ namespace LibraryAppDIT.Controllers.Api
                    Name = z.Name,
                    Address = z.Address,
                    DOB = z.DOB,
-                   Email = z.Email
+                   Email = z.Email,
+                   Phone = z.Phone
                }).ToList();
 
             return results;
@@ -40,6 +41,7 @@ namespace LibraryAppDIT.Controllers.Api
             public string Address;
             public DateTime DOB;
             public string Email;
+            public int Phone;
 
             internal object ToList()
             {

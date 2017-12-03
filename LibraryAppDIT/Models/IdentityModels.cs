@@ -17,8 +17,12 @@ namespace LibraryAppDIT.Models
         //adding fields to Register User page
         [Required]
         public string Name { get; set; }
-
+        
+        [Required]
         public string Address { get; set; }
+       
+        [Required]
+        public int Phone { get; set; }
 
         [Required]
         [Display(Name = "Birthday")]

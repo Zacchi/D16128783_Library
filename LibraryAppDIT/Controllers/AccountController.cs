@@ -158,6 +158,7 @@ namespace LibraryAppDIT.Controllers
                     Email = model.Email, 
                     Name = model.Name,
                     DOB = model.DOB,
+                    Phone = model.Phone,
                     Address = model.Address
                 };
                 var result = await UserManager.CreateAsync(user, model.Password);
