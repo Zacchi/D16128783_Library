@@ -56,6 +56,7 @@ namespace LibraryAppDIT.Controllers
             return View(BookDetails);
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult PostSave(Book book)
         {
             //if(!ModelState.IsValid)
